@@ -1,0 +1,60 @@
+<LoginWindow>:
+    canvas:
+		Color:
+			rgba: 1, 1, 1, 1
+		Rectangle:
+			pos: self.pos
+			size: self.size
+			source: 'image/fundo3.jpg'
+
+	Image:
+		source: 'image/JsBaberLogo.png'
+		size_hint_y: None
+		pos_hint: {"center_x": .5, "top": .87}
+		height: 200
+
+	TextInput:
+		id: txEmail
+		font_size: 18
+		size_hint: None, None
+		multiline: False
+		height: 45
+		hint_text: "Email"
+		foreground_color: (1, 1, 1, 1)
+		write_tab: False
+		width: 270
+		pos_hint: {"center_x": .5, "top": .57}
+		background_color: 1, 1, 1, 0
+
+	TextInput:
+		id: txSenha
+		font_size: 18
+		size_hint: None, None
+		password: True
+		multiline: False
+		height: 45
+		hint_text: "Senha"
+		foreground_color: (1, 1, 1, 1)
+		width: 270
+		pos_hint: {"center_x": .5, "top": .50}
+		background_color: 1, 1, 1, 0
+
+	Button:
+		id: btOk
+		font_size: 18
+		text: 'Login'
+		size_hint: None, None
+		height: 45
+		width: 270
+		on_press: root.validar()
+		pos_hint: {"center_x": .5, "top": .42}
+		background_color: 1, 1, 1, 1
+	
+	Label:
+		id: sts
+		font_size: 18
+		size_hint: None, None
+		height: 45
+		text: ''
+		width: 270
+		pos_hint: {"center_x": .5, "top": .33}
