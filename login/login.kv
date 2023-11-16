@@ -1,4 +1,18 @@
+<SmoothTextInput@TextInput>:
+	background_color: (0,0,0,0)
+	background_normal: ''
+	back_color: (1,0,1,1)
+	border_radius: 18
+	color: self.back_color
+	canvas.before:
+		Color:
+			rgba: self.back_color
+		Line:
+			rounded_rectangle: (self.pos[0], self.pos[1], self.size[0], self.size[1], self.border_radius)
+			width: .6
+			
 <LoginWindow>:
+	orientation: 'vertical'
     canvas:
 		Color:
 			rgba: 1, 1, 1, 1
@@ -10,46 +24,29 @@
 	Image:
 		source: 'image/JsBaberLogo.png'
 		size_hint_y: None
-		pos_hint: {"center_x": .5, "top": .87}
-		height: 200
+		height: 185
+		pos_hint: {"center_x": .5, "top": .90}
 
 	TextInput:
 		id: txEmail
 		font_size: 18
-		size_hint: None, None
+		size_hint: .62, .06
 		multiline: False
-		height: 45
 		hint_text: "Email"
-		foreground_color: (1, 1, 1, 1)
+		hint_text_color: (0, 0, 0, 0.5)
 		write_tab: False
-		width: 270
-		pos_hint: {"center_x": .5, "top": .57}
-		background_color: 1, 1, 1, 0
+		pos_hint: {"center_x": .5, "top": .65}
+
 
 	TextInput:
 		id: txSenha
 		font_size: 18
-		size_hint: None, None
+		size_hint: .62, .06
 		password: True
 		multiline: False
-		height: 45
 		hint_text: "Senha"
-		foreground_color: (1, 1, 1, 1)
-		width: 270
-		pos_hint: {"center_x": .5, "top": .50}
-		background_color: 1, 1, 1, 0
+		pos_hint: {"center_x": .5, "top": .56}
 
-	Button:
-		id: btOk
-		font_size: 18
-		text: 'Login'
-		size_hint: None, None
-		height: 45
-		width: 270
-		on_press: root.validar()
-		pos_hint: {"center_x": .5, "top": .42}
-		background_color: 1, 1, 1, 1
-	
 	Label:
 		id: sts
 		font_size: 18
@@ -57,4 +54,39 @@
 		height: 45
 		text: ''
 		width: 270
-		pos_hint: {"center_x": .5, "top": .33}
+		pos_hint: {"center_x": .5, "top": .48}
+
+	Button:
+		id: btLogin
+		font_size: 18
+		text: 'Login'
+		size_hint: .62, .06
+		on_press: root.validar()
+		pos_hint: {"center_x": .5, "top": .40}
+		background_color: (0.13, 0.45, 0.49, 1)
+		background_normal: ''
+#	Image:
+#		source: 'image/linePole.jpg'
+#		size_hint_y: None
+#		height: 150
+#		pos_hint: {"center_x": .5, "top": .42}
+
+#	"ou" que estará entre as linhas que separam os botoes de login e cadastrar	
+	Label:
+		font_size: 18
+		size_hint: None, None
+		height: 45
+		text: 'Ou'
+		width: 270
+		pos_hint: {"center_x": .5, "top": .35}
+	
+	Button:
+		id: btCadastrar
+		font_size: 18
+		text: 'Cadastre-se'
+		size_hint: .62, .06
+		on_press: root.telaCadastro()
+		pos_hint: {"center_x": .5, "top": .30}
+		background_color: (0.13, 0.45, 0.49, 1)
+		background_normal: ''
+

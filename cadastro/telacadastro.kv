@@ -1,0 +1,80 @@
+<TelaCadastroWindow>:
+	canvas:
+		Color:
+			rgba: 0, 0, 0, 1
+		Rectangle:
+			pos: self.pos
+			size: self.size
+			source: 'image/fundo3.jpg'
+			
+	Button:
+		id: btBack
+		text: "<<<"
+		background_color: (0.157, 0.455, 0.753, 1.0)
+		font_size: 18
+		size_hint: None, None
+		height: 35
+		width: 80
+		pos_hint: {"top": 0 , "top": 1.}
+		on_release: root.voltar()
+
+	FloatLayout:
+		Label:
+			id: lbNome
+			text: 'Nome:'
+			font_size: 18
+			size_hint: .3, .048
+			pos_hint: {"top": .02 , "top": .9}
+
+		TextInput:
+			id: txNome
+			font_size: 18
+			size_hint: .8, .048
+			pos_hint: {"center_x": .48, "top": .84}
+
+		Label:
+			id: lbTelefone
+			text: 'Telefone:'
+			font_size: 18
+			size_hint: .3, .048
+			pos_hint: {"top": .08 , "top": .78}
+
+		TextInput:
+			id: txTelefone
+			font_size: 18
+			size_hint: .8, .048
+			pos_hint: {"center_x": .48, "top": .72}
+		
+		Label:
+			id: lbEmail
+			text: 'Email:'
+			font_size: 18
+			size_hint: .3, .048
+			pos_hint: {"top": .02 , "top": .66}
+
+		TextInput:
+			id: txEmail
+			font_size: 18
+			size_hint: .8, .048
+			pos_hint: {"center_x": .48, "top": .60}
+		
+		Label:
+			id: lbSenha
+			text: 'Senha:'
+			font_size: 18
+			size_hint: .3, .048
+			pos_hint: {"top": .02 , "top": .54}
+
+		TextInput:
+			id: txSenha
+			font_size: 18
+			size_hint: .8, .048
+			pos_hint: {"center_x": .48, "top": .48}
+
+		Button:
+			id: btCadatrar
+			text:'Cadastrar-se'
+			size_hint: .8, .052
+			pos_hint: {"center_x": .48, "top": .40}
+			background_color: (0.157, 0.455, 0.753, 1.0)
+			on_release: root.cadastrar()

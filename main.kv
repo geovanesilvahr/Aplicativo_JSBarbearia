@@ -1,8 +1,10 @@
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
 <MainWindow>:
     id: win_main
     
     ScreenManager:
         id: scrn_mnger
+        transition: FadeTransition()
 
         Screen:
             id: scrn_login
@@ -11,3 +13,7 @@
         Screen:
             id: scrn_tela
             name: 'scrn_tela'
+
+        Screen:
+            id: scrn_telacadastro
+            name: 'scrn_telacadastro'

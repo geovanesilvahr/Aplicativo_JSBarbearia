@@ -5,6 +5,7 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.lang import Builder
 
 
+#Tela de Login - Primeira Screen executada pelo ScreenManager
 class LoginWindow(FloatLayout):
 
     def __init__(self, **kwargs):
@@ -17,12 +18,14 @@ class LoginWindow(FloatLayout):
 
         if self.email == 'admin' and self.senha == 'admin':
             self.parent.parent.current = 'scrn_tela'
-            self.ids.sts.color = (0, 1, 0, 1)
-            self.ids.sts.text = 'Login feito com sucesso!'
+            self.ids.sts.text = ''
 
         else:
             self.ids.sts.color = (1, 0, 0, 1)
             self.ids.sts.text = 'Usuário e/ou Senha Inválida!'
+    
+    def telaCadastro(self):
+        self.parent.parent.current = 'scrn_telacadastro'
 
 Builder.load_file('login/login.kv')
 
